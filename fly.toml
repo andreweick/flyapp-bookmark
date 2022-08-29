@@ -1,4 +1,4 @@
-# fly.toml file generated for edc-bookmarks on 2022-06-18T12:48:29-04:00
+# fly.toml file generated for edc-bookmarks on 2022-08-29T15:15:07-04:00
 
 app = "edc-bookmarks"
 kill_signal = "SIGINT"
@@ -6,10 +6,15 @@ kill_timeout = 5
 processes = []
 
 [env]
+  SHIORI_DIR = "/opt/shiori"
 
 [experimental]
   allowed_public_ports = []
   auto_rollback = true
+
+[mounts]
+  destination = "/opt/shiori"
+  source = "shiori_data"
 
 [[services]]
   http_checks = []
